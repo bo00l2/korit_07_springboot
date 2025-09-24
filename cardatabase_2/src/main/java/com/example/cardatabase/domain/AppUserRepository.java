@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.Optional;
 
-//@RepositoryRestResource
+@RepositoryRestResource(exported = false)
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
-    Optional<AppUser> findBYUsername(String username);
+    Optional<AppUser> findByUsername(String username);
 }

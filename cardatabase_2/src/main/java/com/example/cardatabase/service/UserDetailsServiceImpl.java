@@ -21,14 +21,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<AppUser> user = userRepository.findBYUsername(username);
+        Optional<AppUser> user = userRepository.findByUsername(username);
 
         UserBuilder builder = null;
         if (user.isPresent()){  // 이하의 실행문이 실행된다면 user에 AppUser 객체가 있다는 의미
             AppUser currentUser = user.get();
             builder = User.withUsername(username);
             builder.password(currentUser.getPassword());    // 현재상태에서 가져오기
-            builder.roles(currentUser.getRole();
+            builder.roles(currentUser.getRole());
         } else {
             throw new UsernameNotFoundException("User not found.");
         }

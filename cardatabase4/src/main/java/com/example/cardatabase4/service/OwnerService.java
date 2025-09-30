@@ -1,6 +1,5 @@
 package com.example.cardatabase4.service;
 
-import com.example.cardatabase4.domain.Car;
 import com.example.cardatabase4.domain.Owner;
 import com.example.cardatabase4.domain.OwnerRepository;
 import org.springframework.stereotype.Service;

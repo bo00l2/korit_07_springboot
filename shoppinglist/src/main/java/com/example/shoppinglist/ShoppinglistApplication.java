@@ -2,6 +2,7 @@ package com.example.shoppinglist;
 
 import com.example.shoppinglist.domain.Item;
 import com.example.shoppinglist.domain.ItemRepository;
+import com.example.shoppinglist.domain.ShopUser;
 import com.example.shoppinglist.domain.ShopUserRepository;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -31,9 +32,11 @@ public class ShoppinglistApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		ShopUser user = new ShopUser("hong", "1234", "USER");
+		shopUserRepository.save(user);
 
-		repository.save(new Item("색종이", 3, 1500));
-		repository.save(new Item("노트", 5, 2000));
+		repository.save(new Item("색종이", 3, 1500, user));
+		repository.save(new Item("노트", 5, 2000, user));
 
 		for(Item item : repository.findAll()){
 			logger.info("product : {}, price : {}", item.getProduct(), item.getPrice());

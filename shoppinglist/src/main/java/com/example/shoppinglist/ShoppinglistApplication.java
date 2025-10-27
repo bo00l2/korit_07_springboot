@@ -32,15 +32,17 @@ public class ShoppinglistApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		ShopUser user = new ShopUser("hong", "1234", "USER");
-		shopUserRepository.save(user);
+//		ShopUser user = new ShopUser("hong", "1234", "USER");
+//		shopUserRepository.save(user);
+//
+//		repository.save(new Item("색종이", 3, 1500, user));
+//		repository.save(new Item("노트", 5, 2000, user));
+//
+//		for(Item item : repository.findAll()){
+//			logger.info("product : {}, price : {}", item.getProduct(), item.getPrice());
+//		}
 
-		repository.save(new Item("색종이", 3, 1500, user));
-		repository.save(new Item("노트", 5, 2000, user));
-
-		for(Item item : repository.findAll()){
-			logger.info("product : {}, price : {}", item.getProduct(), item.getPrice());
-		}
+//		shopUserRepository.save(new ShopUser("user", UKsochd91c3i1nof6h1df4a5j3s, "USER"));
 	}
 
 	public static class ShopController {
